@@ -14,7 +14,7 @@ import { withStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
+import ViewComfy from '@material-ui/icons/ViewComfy';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
@@ -29,51 +29,12 @@ const styles = customClasses => ({
   },
   menuButton: {
     marginLeft: -12,
-    marginRight: 20,
+    marginRight: 20
   },
   title: {
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
-    },
-  },
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing.unit * 2,
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing.unit * 3,
-      width: 'auto',
-    },
-  },
-  searchIcon: {
-    width: theme.spacing.unit * 9,
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  inputRoot: {
-    color: 'inherit',
-    width: '100%',
-  },
-  inputInput: {
-    paddingTop: theme.spacing.unit,
-    paddingRight: theme.spacing.unit,
-    paddingBottom: theme.spacing.unit,
-    paddingLeft: theme.spacing.unit * 10,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: 200,
     },
   },
   sectionDesktop: {
@@ -90,8 +51,16 @@ const styles = customClasses => ({
   },
   appBar: {
     backgroundColor: '#fff',
-    color: '#000'
+    color: '#444444',
+
   },
+  arrowIcon: {
+    fontSize: '8px',
+    marginLeft: '5px',
+  },
+  button: {
+    textTransform: 'Capitalize'
+  }
 });
 
 const theme = createMuiTheme({
@@ -155,7 +124,7 @@ class Menubar extends React.Component {
         <MenuItem onClick={this.handleMobileMenuClose}>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
-              <MailIcon />
+              <ViewComfy />
             </Badge>
           </IconButton>
           <p>Messages</p>
@@ -189,9 +158,9 @@ class Menubar extends React.Component {
 
             <div className={classes.sectionDesktop}>
               <IconButton color="inherit">
-                <MailIcon />
+                <ViewComfy />
               </IconButton>
-              <Button color="inherit">Posiont</Button>
+              <Button color="inherit">Position</Button>
               <Button color="inherit">Help</Button>
               <Button
                 aria-owns={isMenuOpen ? 'material-appbar' : undefined}
@@ -199,7 +168,7 @@ class Menubar extends React.Component {
                 onClick={this.handleProfileMenuOpen}
                 color="inherit"
               >
-                ProXvv &#9660;
+                Pro xvv  <span className={classes.arrowIcon}>&#9660;</span>
               </Button>
             </div>
 

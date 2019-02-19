@@ -69,7 +69,7 @@ const AccordionHeader = (props) => {
   const { classes } = props;
   return (
     <Grid container spacing={16}>
-      <Grid item md={5}>
+      <Grid item lg={5} md={12} xs={12}>
           <Card className={classes.card}>
             <CardContent>
               <Typography variant="h5" component="h2">
@@ -85,7 +85,7 @@ const AccordionHeader = (props) => {
           </Card>
 
       </Grid>
-      <Grid item md={7}>
+      <Grid item lg={7} md={12} xs={12}>
         <Typography variant="body2" gutterBottom className={classes.subtitle1}>
         subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
       </Typography>
